@@ -1,0 +1,131 @@
+import numpy as np
+
+#[Height,Upper_Left_arm,Lower_left_arm,Upper_Right_arm,Lower_right_arm,Upper_left_leg,Lower_left_leg,Upper_rigth_leg,lower_right_leg,left_body,rinht_body,chest_length]]
+Mine_body_length = [174.0,28.01,27.20,28.11,27.23,50.01,45.10,50.02,46.05,49.20,49.44,39.52]
+
+#[left_elbow_angle,right_elbow_angle,left_shoulder_angle,right_shoulder_angle,hip_angle,cheast_angle,left_knee_angle,right_knee_angle]
+Mine_body_angle = [6.17,1.21,177.33,176.09,55.08,55.43,162.54,162.40]
+
+
+combie_mine = [Mine_body_length,Mine_body_angle]
+#[Height,Upper_Left_arm,Lower_left_arm,Upper_Right_arm,Lower_right_arm,Upper_left_leg,Lower_left_leg,Upper_rigth_leg,lower_right_leg,left_body,rinht_body,chest_length]]
+Collin_Morikawa_length = [175,27.91,28.05,28.20,27.59,51.23,46.73,51.01,46.03,49.43,50.21,41.22]
+#[left_elbow_angle,right_elbow_angle,left_shoulder_angle,right_shoulder_angle,hip_angle,cheast_angle,left_knee_angle,right_knee_angle]
+Collin_Morikawa_1_angle = [ 177.3330566111599, 176.09977906521715,  71.27701891151155,  86.04547803515827,  0.0, 0.0]
+Collin_Morikawa_2_angle = [ 92.17901254010417, 125.29580737917291,  12.16159265744866,  151.10674034984035,  19.5816250476405, 52.855000630128]
+Collin_Morikawa_3_angle = [ 162.32231266386708, 158.54124291623253,  61.65724835568677,  94.83543125123282,  28.696375856703575, 36.52505847954689]
+Collin_Morikawa_4_angle = [ 176.61926372940545, 173.67185380624292,  89.1292632728824,  70.69481577145443,  51.35944503812622, 63.429214399593704]
+Collin_Morikawa_5_angle = [ 161.4379675247697, 176.44286668760336,  90.73523695826516,  61.203962682717396,  56.10143300007625, 69.32971418931874]
+Collin_Morikawa_6_angle = [ 109.37297274241317, 161.3660802840557,  113.69298634155935,  79.16582860593104,  81.0597759835009, 82.51637906818608]
+#[Height,Upper_Left_arm,Lower_left_arm,Upper_Right_arm,Lower_right_arm,Upper_left_leg,Lower_left_leg,Upper_rigth_leg,lower_right_leg,left_body,rinht_body,chest_length]]
+LYDIA_KO_length = [167.0,26.59,27.32,26.87,27.55,48.98,43.43,49.21,43.53,47.87,48.43,38.24]
+#[left_elbow_angle,right_elbow_angle,left_shoulder_angle,right_shoulder_angle,hip_angle,cheast_angle,left_knee_angle,right_knee_angle]
+LYDIA_KO_1 = [ 166.1206577808749, 173.85768024893866,  77.47544612696326,  82.3468439837823,  0.0, 0.0]
+LYDIA_KO_2 = [ 140.55707030046963, 122.28198181912462,  6.910021744701927,  90.77166857225684,  20.50509467941951, 53.04377479238422]
+LYDIA_KO_3 = [ 148.98854324622218, 176.78583122903922,  73.80012685043226,  85.20362813911836,  32.186200830544756, 36.95726194640825]
+LYDIA_KO_4 = [ 165.03712758969496, 159.15197447384685,  123.26728131862056,  29.313935089620625,  33.35441654976862, 54.01591596875912]
+LYDIA_KO_5 = [ 38.841344346182105, 162.30476688105438,  128.05985154043327,  40.44215684544841,  28.04270225716322, 64.30865919014788]
+LYDIA_KO_6 = [ 60.62857809353995, 151.60461791956828,  166.54410252659937,  2.5727260481982865,  67.42012114477467, 49.28120184746075]
+
+#[Height,Upper_Left_arm,Lower_left_arm,Upper_Right_arm,Lower_right_arm,Upper_left_leg,Lower_left_leg,Upper_rigth_leg,lower_right_leg,left_body,rinht_body,chest_length]]
+Nelly_Korda_length = [178.0,28.45,29.32,28.01,29.45,52.22,46.55,52.39,46.97,51.43,51.67,39.44]
+#[left_elbow_angle,right_elbow_angle,left_shoulder_angle,right_shoulder_angle,hip_angle,cheast_angle,left_knee_angle,right_knee_angle]
+Nelly_Korda_1 = [ 175.63876561473884, 175.4896376547949,  70.2153204158463,  82.44079195547519,  0.0, 0.0]
+Nelly_Korda_2 = [ 70.92825656162972, 157.65052794122855,  137.0209043893829,  124.03966406256711,  13.370130860527686, 35.11399898168316]
+Nelly_Korda_3 = [ 152.2612482641509, 178.38335406977913,  80.90335925676365,  89.38954394719546,  17.726779500364024, 28.465292548451007]
+Nelly_Korda_4 = [ 169.58102187916768, 158.81594665656618,  83.72332400893774,  78.34020308921055,  36.52369892837828, 44.41819892171424]
+Nelly_Korda_5 = [ 145.12582561651618, 166.96544568758858,  86.1724431035474,  65.0408736833025,  39.7261841708011, 60.24929552487725]
+Nelly_Korda_6 = [ 116.84382822204091, 123.33834555830352,  73.28170759442224,  145.75427473143296,  59.93606533640867, 67.21715247977173]
+
+#[Height,Upper_Left_arm,Lower_left_arm,Upper_Right_arm,Lower_right_arm,Upper_left_leg,Lower_left_leg,Upper_rigth_leg,lower_right_leg,left_body,rinht_body,chest_length]]
+Rory_Mcilory_length = [175.0,28.03,28.10,28.22,27.67,50.67,45.98,51.21,46.12,49.66,50.42,42.01]
+#[left_elbow_angle,right_elbow_angle,left_shoulder_angle,right_shoulder_angle,hip_angle,cheast_angle,left_knee_angle,right_knee_angle]
+Rory_Mcilroy_1 = [ 179.55481162361107, 161.84745245760246,  68.45895668400702,  86.44024241056715,  0.0, 0.0]
+Rory_Mcilroy_2 = [ 143.85904974363606, 161.86803723745135,  21.2740453398431,  115.89346536060776,  20.378645382779304, 52.91356027185183]
+Rory_Mcilroy_3 = [ 151.9650859972422, 177.31265378309922,  76.83975806497392,  85.9490685494522,  10.699621242812851, 10.282640529907896]
+Rory_Mcilroy_4 = [ 178.83129831519489, 164.4196717856779,  71.9124079954568,  87.19039696082072,  37.510064125774875, 44.232991092652576]
+Rory_Mcilroy_5 = [ 153.33246556160358, 161.08100605769172,  119.67768488650933,  52.22573605566246,  47.8690846284235, 75.31648944912331]
+Rory_Mcilroy_6 = [ 79.49608942689537, 168.18054684552266,  161.46503373220528,  46.26988930299228,  70.45602544114656, 44.24482046718418]
+
+#[Height,Upper_Left_arm,Lower_left_arm,Upper_Right_arm,Lower_right_arm,Upper_left_leg,Lower_left_leg,Upper_rigth_leg,lower_right_leg,left_body,rinht_body,chest_length]]
+tiger_wood_length = [185.0,31.23,32.22,31.40,32.13,55.34,53.45,56.01,53.09,53.67,54.57,44.23]
+#[left_elbow_angle,right_elbow_angle,left_shoulder_angle,right_shoulder_angle,hip_angle,cheast_angle,left_knee_angle,right_knee_angle]
+tiger_wood_1 = [ 172.09827510918203, 167.24458865408687,  75.28936396938984,  90.2726671834927,  0.0, 0.0]
+tiger_wood_2 = [ 149.57922109743836, 142.7108579566357,  63.89161848108375,  89.00905348246033,  24.40498547674981, 27.464517473685305]
+tiger_wood_3 = [ 86.74355663074807, 129.36435739402347,  0.5147587898585714,  120.4072364145669,  26.879591370278877, 48.72685253836831]
+tiger_wood_4 = [ 178.6359863042316, 163.93844977891374,  71.46900504946869,  88.07904465642902,  41.85281750475347, 37.99218783005568]
+tiger_wood_5 = [ 147.56682799577513, 156.56340029450425,  120.13442453874447,  43.49819813624482,  49.55789753301733, 66.72613526564838]
+tiger_wood_6 = [ 150.81543934602823, 126.56473555999257,  41.32639844171124,  170.84246735711454,  63.39692546539095, 74.65702804178947]
+
+class AthleteComparison:
+    def __init__(self, Mine_body_length, Mine_body_angle):
+        self.Mine_body_length = np.array(Mine_body_length)
+        self.Mine_body_angle = np.array(Mine_body_angle)
+        self.results = []
+
+    def compare_arrays(self, athlete_length, athlete_angles):
+        # เปรียบเทียบความยาว (length)
+        athlete_length = np.array(athlete_length)
+        length_diff = np.abs(self.Mine_body_length - athlete_length)
+        mean_length_diff = np.mean(length_diff)
+        
+        # เปรียบเทียบมุม (angles)
+        angle_diffs = []
+        for angle1, angle2 in zip(self.Mine_body_angle, athlete_angles):
+            angle1 = np.array(angle1)
+            angle2 = np.array(angle2)
+            angle_diff = np.abs(angle1 - angle2)
+            angle_diffs.append(np.mean(angle_diff))
+        
+        mean_angle_diff = np.mean(angle_diffs)
+        
+        # คำนวณผลรวมของความแตกต่างทั้งสอง
+        total_diff = mean_length_diff + mean_angle_diff
+        return total_diff, mean_length_diff, mean_angle_diff, angle_diffs
+
+    def compare_athletes(self, athletes_data):
+        # เปรียบเทียบกับข้อมูลของนักกีฬา
+        for name, athlete_length, athlete_angles in athletes_data:
+            total_diff, mean_length_diff, mean_angle_diff, angle_diffs = self.compare_arrays(athlete_length, athlete_angles)
+            self.results.append((name, total_diff, mean_length_diff, mean_angle_diff, angle_diffs))
+        
+        # เรียงผลลัพธ์จากความแตกต่างรวมที่น้อยที่สุด
+        self.results.sort(key=lambda x: x[1])
+
+    def print_results(self):
+        print("Comparison results (sorted by closest match):")
+        for name, total_diff, mean_length_diff, mean_angle_diff, angle_diffs in self.results:
+            print(f"\nAthlete: {name}")
+            # print(f"  Total Difference: {total_diff:.4f}")
+            print(f"  Length Difference: {mean_length_diff:.4f}")
+            print(f"  Angle Difference: {mean_angle_diff:.4f}")
+            print("  Angle Differences for each pose:")
+            for i, angle_diff in enumerate(angle_diffs, 1):
+                print(f"    Pose {i}: {angle_diff:.4f}")
+# รายการข้อมูลนักกีฬา
+athletes_data = [
+    ("Collin_Morikawa", Collin_Morikawa_length, 
+     [Collin_Morikawa_1_angle, Collin_Morikawa_2_angle, Collin_Morikawa_3_angle, 
+      Collin_Morikawa_4_angle, Collin_Morikawa_5_angle, Collin_Morikawa_6_angle]),
+
+    ("LYDIA_KO", LYDIA_KO_length, 
+     [LYDIA_KO_1, LYDIA_KO_2, LYDIA_KO_3, LYDIA_KO_4, LYDIA_KO_5, LYDIA_KO_6]),
+
+    ("Nelly_Korda", Nelly_Korda_length, 
+     [Nelly_Korda_1, Nelly_Korda_2, Nelly_Korda_3, Nelly_Korda_4, Nelly_Korda_5, Nelly_Korda_6]),
+
+    ("Rory_Mcilory", Rory_Mcilory_length, 
+     [Rory_Mcilory_1, Rory_Mcilory_2, Rory_Mcilory_3, Rory_Mcilory_4, Rory_Mcilory_5, Rory_Mcilory_6]),
+
+    ("Tiger Wood", tiger_wood_length, 
+     [tiger_wood_1, tiger_wood_2, tiger_wood_3, tiger_wood_4, tiger_wood_5, tiger_wood_6])
+]
+
+# สร้างอินสแตนซ์ของคลาส AthleteComparison
+comparison = AthleteComparison(Mine_body_length, Mine_body_angle)
+
+# เปรียบเทียบข้อมูลนักกีฬาทั้งหมด
+comparison.compare_athletes(athletes_data)
+
+# แสดงผลการเปรียบเทียบ
+comparison.print_results()
